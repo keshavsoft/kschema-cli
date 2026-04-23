@@ -8,6 +8,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@keshavsoft/kschema": "^1.12.3"
+    "@keshavsoft/kschema": "^1.13.1"
   }
 }

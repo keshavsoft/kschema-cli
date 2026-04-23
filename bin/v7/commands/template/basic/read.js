@@ -3,6 +3,6 @@ import consfigJson from './config.json' with { type: 'json' };
 
 kschema.loadConfig(consfigJson);
 
-const data = kschema.table("LedgerNames").get();
+const data = kschema.table("LedgerNames").query.findAll();
 
 console.log("data : ", data);
