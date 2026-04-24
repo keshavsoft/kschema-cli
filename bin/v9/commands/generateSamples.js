@@ -4,7 +4,7 @@ import path from "path";
 import { exampleSchema } from "@keshavsoft/kschema";
 import { baseTemplate } from "./template/baseTemplate.js";
 
-export default () => {
+export default ({ args }) => {
     const OUTPUT_DIR = path.resolve(process.cwd(), "samples");
 
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -13,13 +13,14 @@ export default () => {
 
     Object.entries(exampleSchema).forEach(([intent, methods]) => {
         Object.entries(methods).forEach(([key, meta]) => {
+            if (Array.isArray(meta)) {
+                const finalCode = baseTemplate({
+                    body: meta.join("\r\n"),
+                    inTableName: args[0]
+                });
 
-            const finalCode = baseTemplate({ body: meta.body });
-
-            fs.writeFileSync(path.join(OUTPUT_DIR, `${intent}_${key}.js`), finalCode);
-
+                fs.writeFileSync(path.join(OUTPUT_DIR, `${intent}_${key}.js`), finalCode);
+            };
         });
-
     });
-
 };

@@ -1,7 +1,7 @@
 export const baseTemplate = ({ body, inTableName = "SampleTable" }) => `
 import { kschema } from "@keshavsoft/kschema";
 
-import configJson from "./config.json" with { type: "json" };
+import configJson from "../config.json" with { type: "json" };
 
 kschema.loadConfig(configJson);
 
