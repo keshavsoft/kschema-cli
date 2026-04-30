@@ -41,3 +41,7 @@ The format is based on Keep a Changelog.
 ## [1.11.1] - 2026-05-01
 
 - express added
+
+## [1.12.1] - 2026-05-01
+
+- started exporting also, along with cli

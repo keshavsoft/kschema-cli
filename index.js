@@ -1,0 +1,1 @@
+export { default as init } from "./bin/v12/commands/init.js";
