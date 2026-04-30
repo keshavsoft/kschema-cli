@@ -38,3 +38,6 @@ The format is based on Keep a Changelog.
 
 - cli perfect with samples also, only kschema version need to change
 
+## [1.11.1] - 2026-05-01
+
+- express added
