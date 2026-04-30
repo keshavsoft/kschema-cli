@@ -45,3 +45,7 @@ The format is based on Keep a Changelog.
 ## [1.12.1] - 2026-05-01
 
 - started exporting also, along with cli
+
+## [1.12.2] - 2026-05-01
+
+- export init and express perfect
