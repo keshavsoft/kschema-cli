@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@keshavsoft/kschema": "^1.6.1",
+    "@keshavsoft/kschema": "^1.17.8",
     "body-parser": "^2.2.0",
     "express": "^5.1.0"
   }

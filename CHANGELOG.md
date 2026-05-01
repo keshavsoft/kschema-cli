@@ -49,3 +49,7 @@ The format is based on Keep a Changelog.
 ## [1.12.2] - 2026-05-01
 
 - export init and express perfect
+
+## [1.12.4] - 2026-05-01
+
+- express template perfect need to test

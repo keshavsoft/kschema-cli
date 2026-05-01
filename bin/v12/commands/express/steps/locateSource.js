@@ -8,6 +8,7 @@ export const locateSource = () => {
     return path.join(
         __dirname,
         "..",
-        "template"
+        "template",
+        "v1"
     );
 };
