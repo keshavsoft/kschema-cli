@@ -53,3 +53,7 @@ The format is based on Keep a Changelog.
 ## [1.12.4] - 2026-05-01
 
 - express template perfect need to test
+
+## [1.12.5] - 2026-05-02
+
+- express started workin on v3

@@ -9,6 +9,6 @@ export const locateSource = () => {
         __dirname,
         "..",
         "template",
-        "v1"
+        "v3"
     );
 };
