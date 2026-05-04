@@ -8,7 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@keshavsoft/kschema": "^1.17.6",
-    "@keshavsoft/kschema-cli": "^1.10.2"
+    "@keshavsoft/kschema": "^1.17.10",
+    "@keshavsoft/kschema-cli": "^1.12.6"
   }
 }
