@@ -61,3 +61,7 @@ The format is based on Keep a Changelog.
 ## [1.12.6] - 2026-05-02
 
 - tally perfect till masters
+
+## [1.12.7] - 2026-05-05
+
+- tally v3 perfect with voucher post
