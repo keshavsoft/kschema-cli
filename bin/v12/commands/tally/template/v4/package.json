@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@keshavsoft/kschema": "^1.17.8",
-    "@keshavsoft/tallyextract": "^1.2.1",
+    "@keshavsoft/kschema": "^1.17.10",
+    "@keshavsoft/tallyextract": "^1.2.3",
     "@yao-pkg/pkg": "^6.19.0",
     "body-parser": "^2.2.0",
     "dotenv": "^17.4.2",

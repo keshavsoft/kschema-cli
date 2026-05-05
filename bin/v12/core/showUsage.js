@@ -29,7 +29,8 @@ ${y}Usage:${r}
 
 ${y}Commands:${r}
   ${g}init${r}              Initialize a new schema setup
-  ${g}test${r}              Run schema validations/tests
+  ${g}express${r}           Initialize a new express project
+  ${g}tally${r}             Initialize a new tally project
   ${g}generate-samples${r}  Generate sample schema files
 
 ${y}Examples:${r}

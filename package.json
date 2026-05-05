@@ -1,6 +1,6 @@
 {
   "name": "@keshavsoft/kschema-cli",
-  "version": "1.12.14",
+  "version": "1.12.15",
   "description": "CLI to scaffold projects using templates",
   "keywords": [
     "cli",
