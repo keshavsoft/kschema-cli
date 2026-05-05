@@ -1,0 +1,9 @@
+archive/**
+.vscode/**
+.vscode-test/**
+test/**
+node_modules/**
+*.vsix
+*.log
+dev.md
+CHANGELOG.md
