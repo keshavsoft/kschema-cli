@@ -81,3 +81,7 @@ The format is based on Keep a Changelog.
 ## [1.12.13] - 2026-05-05
 
 - express new with open html
+
+## [1.12.14] - 2026-05-05
+
+- tally perfect with pkg also
