@@ -1,74 +1,58 @@
-# @keshavsoft/kschema
-
-A minimal config store for loading and accessing JSON configuration across your application.
+# Developer Notes – @keshavsoft/kschema-cli
 
 ---
 
-## 🚀 Installation
+## 🎯 Purpose
 
-```bash
-npm install @keshavsoft/kschema
-```
+This package is **NOT just a CLI**.
+
+It serves two roles:
+1. CLI tool (via `bin/cli.js`)
+2. Internal SDK used by VS Code extension (EndPointGen)
 
 ---
 
-## 📦 Usage
+## 🧩 Architecture
+
+VS Code Extension (EndPointGen)
+→ triggers commands  
+→ calls orchestration  
+→ imports from `@keshavsoft/kschema-cli`  
+→ uses exported functions (like `express`)  
+→ internally maps to `bin/v12/...` implementation  
+
+---
+
+## 🔗 Important Flow
 
 ```js
-import { loadConfig, getConfig } from "@keshavsoft/kschema";
+import { express } from "@keshavsoft/kschema-cli";
 
-loadConfig({ name: "test" });
+## 🔗 Related Projects
 
-console.log(getConfig());
-```
+### Core Schema Library
+https://www.npmjs.com/package/@keshavsoft/kschema
 
----
-
-## 🧠 API
-
-### loadConfig(config)
-
-Loads the configuration into memory.
-
-* `config` → Object
+Minimal config store used internally by CLI.
 
 ---
 
-### getConfig()
+### CLI Tool
+https://www.npmjs.com/package/@keshavsoft/kschema-cli
 
-Returns the loaded configuration.
-
-* Throws error if config is not loaded
-
----
-
-## ⚠️ Notes
-
-* Config is stored in-memory
-* Must call `loadConfig` before `getConfig`
+Scaffolding engine used to generate project structures.
 
 ---
 
-## 📌 Example
+### VS Code Extension (Real Usage)
+https://github.com/keshavsoft/EndPointGen
 
-```js
-loadConfig({ user: "keshav" });
-
-const data = getConfig();
-
-console.log(data.user); // keshav
-```
+This extension uses `@keshavsoft/kschema-cli` internally  
+to generate and manage project structures.
 
 ---
 
-## 🛠 Future Scope
+## 🧠 Note
 
-* Validation support
-* Config updates
-* Remote config loading
-
----
-
-## 👨‍💻 Author
-
-KeshavSoft
+This CLI is actively used in production via the VS Code extension above.  
+It is not just a standalone tool, but part of a working ecosystem.

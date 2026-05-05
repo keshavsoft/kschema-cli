@@ -65,3 +65,7 @@ The format is based on Keep a Changelog.
 ## [1.12.7] - 2026-05-05
 
 - tally v3 perfect with voucher post
+
+## [1.12.9] - 2026-05-05
+
+- tally need to test in vs code extension also
