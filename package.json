@@ -1,6 +1,6 @@
 {
   "name": "@keshavsoft/kschema-cli",
-  "version": "1.12.7",
+  "version": "1.12.8",
   "description": "CLI to scaffold projects using templates",
   "keywords": [
     "cli",
@@ -19,6 +19,12 @@
   "bin": {
     "kschema-cli": "./bin/cli.js"
   },
+  "files": [
+    "bin/",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
   "homepage": "https://cli.keshavsoft.com",
   "repository": {
     "type": "git",
