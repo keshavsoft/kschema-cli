@@ -97,3 +97,7 @@ The format is based on Keep a Changelog.
 ## [1.13.1] - 2026-05-05
 
 - tally perfect with uom and rate
+
+## [1.13.2] - 2026-05-05
+
+- more files deleted
