@@ -93,3 +93,7 @@ The format is based on Keep a Changelog.
 ## [1.12.16] - 2026-05-05
 
 - tally Data folder added
+
+## [1.13.1] - 2026-05-05
+
+- tally perfect with uom and rate
