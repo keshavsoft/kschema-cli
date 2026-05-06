@@ -89,3 +89,7 @@ The format is based on Keep a Changelog.
 ## [1.12.15] - 2026-05-05
 
 - tally perfect with pkg also with voucher import
+
+## [1.12.16] - 2026-05-05
+
+- tally Data folder added
