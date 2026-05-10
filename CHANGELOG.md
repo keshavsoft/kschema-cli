@@ -105,3 +105,7 @@ The format is based on Keep a Changelog.
 ## [1.13.3] - 2026-05-05
 
 - express started with kschema-api-gen
+
+## [1.13.5] - 2026-05-05
+
+- accounts new command started

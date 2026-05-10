@@ -32,10 +32,12 @@ ${y}Commands:${r}
   ${g}express${r}           Initialize a new express project
   ${g}tally${r}             Initialize a new tally project
   ${g}generate-samples${r}  Generate sample schema files
+  ${g}accounts${r}          Initialize a new express project for simple accounting
 
 ${y}Examples:${r}
   ${gray}npx @keshavsoft/kschema-cli init${r}
   ${gray}npx @keshavsoft/kschema-cli test users${r}
+  ${gray}npx @keshavsoft/kschema-cli accounts${r}
 
 ${y}Tip:${r}
   ${gray}npm i -g @keshavsoft/kschema-cli${r}
