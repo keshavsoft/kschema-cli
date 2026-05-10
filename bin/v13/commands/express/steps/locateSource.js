@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const sourceVersion = "v5";
+const sourceVersion = "v6";
 
 export const locateSource = () => {
     return path.join(
