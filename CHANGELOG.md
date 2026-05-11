@@ -113,3 +113,7 @@ The format is based on Keep a Changelog.
 ## [1.13.6] - 2026-05-05
 
 - accounts perfect with api gen
+
+## [1.13.7] - 2026-05-11
+
+- accounts started public with kstableai and header code
