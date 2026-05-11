@@ -109,3 +109,7 @@ The format is based on Keep a Changelog.
 ## [1.13.5] - 2026-05-05
 
 - accounts new command started
+
+## [1.13.6] - 2026-05-05
+
+- accounts perfect with api gen
