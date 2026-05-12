@@ -121,3 +121,7 @@ The format is based on Keep a Changelog.
 ## [1.14.1] - 2026-05-11
 
 - accounts started public perfect with showall
+
+## [1.14.2] - 2026-05-11
+
+- accounts UI SHOW PERFECT
