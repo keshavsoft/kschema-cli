@@ -125,3 +125,7 @@ The format is based on Keep a Changelog.
 ## [1.14.2] - 2026-05-11
 
 - accounts UI SHOW PERFECT
+
+## [1.14.3] - 2026-05-13
+
+- accounts UI v11 added
