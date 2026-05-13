@@ -141,3 +141,7 @@ The format is based on Keep a Changelog.
 ## [1.15.4] - 2026-05-13
 
 - accounts template v13 added
+
+## [1.16.1] - 2026-05-13
+
+- generate samples moved to another npm
