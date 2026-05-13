@@ -133,3 +133,7 @@ The format is based on Keep a Changelog.
 ## [1.15.2] - 2026-05-13
 
 - accounts UI v12 fixed
+
+## [1.15.3] - 2026-05-13
+
+- accounts folder name added

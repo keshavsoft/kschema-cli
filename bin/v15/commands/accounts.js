@@ -5,9 +5,10 @@ import { announce } from "./accounts/steps/announce.js";
 
 import resolveFolderName from "../core/resolveFolderName.js";
 
-export default ({  folderName =""}) => {
+export default ({ folderName = "" }) => {
     const resolvedFolderName = resolveFolderName({
-        name: folderName
+        name: folderName,
+        inType: "Accounts"
     });
 
     const source = locateSource();

@@ -1,7 +1,7 @@
 import fs from "fs";
 
-export default function resolveFolderName({ name }) {
-    const defaultFolerName = `keshavsoft-basic-${Date.now()}`;
+export default function resolveFolderName({ name, inType = "basic" }) {
+    const defaultFolerName = `keshavsoft-${inType}-${Date.now()}`;
 
     // case 1: force new → timestamp
     if (name === null) {
