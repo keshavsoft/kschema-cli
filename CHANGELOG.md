@@ -137,3 +137,7 @@ The format is based on Keep a Changelog.
 ## [1.15.3] - 2026-05-13
 
 - accounts folder name added
+
+## [1.15.4] - 2026-05-13
+
+- accounts template v13 added
