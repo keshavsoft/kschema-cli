@@ -1,6 +1,6 @@
 {
   "name": "KeshavSoft",
-  "version": "1.17.12",
+  "version": "1.16.2",
   "description": "",
   "main": "app.js",
   "type": "module",
@@ -16,6 +16,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@keshavsoft/kschema-api-gen": "^1.7.1"
+    "@keshavsoft/kschema-api-gen": "^1.8.1",
+    "@keshavsoft/kschema-cli-samples": "^1.15.2"
   }
 }
