@@ -149,3 +149,7 @@ The format is based on Keep a Changelog.
 ## [1.16.3] - 2026-05-13
 
 - accounts ui js widths
+
+## [1.17.1] - 2026-05-13
+
+- journals.json added
