@@ -145,3 +145,7 @@ The format is based on Keep a Changelog.
 ## [1.16.1] - 2026-05-13
 
 - generate samples moved to another npm
+
+## [1.16.3] - 2026-05-13
+
+- accounts ui js widths
