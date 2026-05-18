@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KSchema CLI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(59, 130, 246, 0.25);
+      filter: blur(120px);
+      top: -150px;
+      left: -100px;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(168, 85, 247, 0.25);
+      filter: blur(120px);
+      bottom: -150px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 999px;
+      margin-bottom: 25px;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffffff, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 16px 30px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    section {
+      padding: 120px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 35px;
+      backdrop-filter: blur(16px);
+      transition: 0.4s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(96,165,250,0.5);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .feature-card p {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .command-box {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      overflow-x: auto;
+      margin-bottom: 30px;
+    }
+
+    .command-box pre {
+      color: #38bdf8;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 30px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 25px;
+      backdrop-filter: blur(12px);
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    .timeline-content p {
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .code-preview {
+      margin-top: 25px;
+      background: #020617;
+      padding: 20px;
+      border-radius: 14px;
+      overflow-x: auto;
+    }
+
+    .code-preview code {
+      color: #22d3ee;
+      line-height: 1.7;
+    }
+
+    .architecture {
+      background: rgba(255,255,255,0.05);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow-x: auto;
+    }
+
+    .architecture pre {
+      color: #93c5fd;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 100px;
+    }
+
+    footer h3 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    @media(max-width: 900px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 0;
+      }
+
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left;
+      }
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="hero">
+        <div class="badge">
+          ⚡ Modern Express.js API Generator CLI
+        </div>
+
+        <h1>KSchema CLI</h1>
+
+        <p>
+          Generate powerful Express.js APIs, CRUD endpoints, route hierarchies,
+          and modular backend architectures automatically using the KSchema ecosystem.
+        </p>
+
+        <div class="buttons">
+          <a href="#installation" class="btn btn-primary">🚀 Get Started</a>
+          <a href="#commands" class="btn btn-secondary">📘 View Commands</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>✨ Features</h2>
+        <p>Everything you need to bootstrap scalable Express.js APIs</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>API Generation</h3>
+          <p>Create complete API folder structures automatically with minimal setup.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>CRUD Support</h3>
+          <p>Generate CRUD endpoints instantly using command-based architecture.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🧩</div>
+          <h3>Modular Design</h3>
+          <p>Clean folder separation with scalable Express Router architecture.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Auto Routing</h3>
+          <p>Endpoints are automatically connected into Express route hierarchy.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📁</div>
+          <h3>JSON Storage</h3>
+          <p>Simple JSON-based data management for lightweight applications.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>Version APIs</h3>
+          <p>Supports V1, V2, and scalable API versioning patterns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="installation">
+    <div class="container">
+      <div class="section-title">
+        <h2>📥 Installation</h2>
+        <p>Quick setup using NPX or Global Installation</p>
+      </div>
+
+      <div class="command-box">
+        <pre>npx @keshavsoft/kschema-api-gen</pre>
+      </div>
+
+      <div class="command-box">
+        <pre>npm install -g @keshavsoft/kschema-api-gen
+
+kschema-api-gen</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="commands">
+    <div class="container">
+      <div class="section-title">
+        <h2>🛠 Available Commands</h2>
+        <p>CLI workflow to generate APIs step by step</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1. StartEndPoint</h3>
+            <p>Creates the base API folder structure.</p>
+
+            <div class="code-preview">
+              <code>npx @keshavsoft/kschema-api-gen StartEndPoint</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>2. AddSubRoute</h3>
+            <p>Creates API version folders like V1 and V2.</p>
+
+            <div class="code-preview">
+              <code>cd Api
+npx @keshavsoft/kschema-api-gen AddSubRoute</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>3. AddTableName</h3>
+            <p>Create module/table folders such as Accounts or Users.</p>
+
+            <div class="code-preview">
+              <code>cd V1
+npx @keshavsoft/kschema-api-gen AddTableName</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>4. ShowAll</h3>
+            <p>Generate GET endpoint architecture for fetching records.</p>
+
+            <div class="code-preview">
+              <code>cd KSTable1
+npx @keshavsoft/kschema-api-gen ShowAll</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>5. CreateApi</h3>
+            <p>Automatically hooks generated endpoints into Express routes.</p>
+
+            <div class="code-preview">
+              <code>npx @keshavsoft/kschema-api-gen CreateApi Api/V1/KSTable1/ShowAll</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>6. InsertApi</h3>
+            <p>Create POST/Insert endpoint structures instantly.</p>
+
+            <div class="code-preview">
+              <code>npx @keshavsoft/kschema-api-gen InsertApi Api/V1/KSTable1/Insert</code>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>🏗 Generated Architecture</h2>
+        <p>Clean and scalable project structure</p>
+      </div>
+
+      <div class="architecture">
+<pre>Api/
+   V1/
+      routes.js
+
+      KSTable1/
+         end-points.js
+
+         ShowAll/
+            controller.js
+            service.js
+            errors.js</pre>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>🌐 Final Endpoint</h2>
+        <p>Access generated APIs directly in browser</p>
+      </div>
+
+      <div class="command-box">
+        <pre>GET /V1/KSTable1/ShowAll
+
+http://localhost:3000/V1/KSTable1/ShowAll</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>⚡ KSchema CLI</h3>
+    <p>
+      Build scalable Express.js APIs faster with automation and modular architecture.
+    </p>
+
+    <a href="#" class="btn btn-primary">⭐ Start Building</a>
+  </footer>
+
+</body>
+</html>
