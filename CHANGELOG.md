@@ -153,3 +153,7 @@ The format is based on Keep a Changelog.
 ## [1.17.1] - 2026-05-13
 
 - journals.json added
+
+## [1.17.2] - 2026-05-13
+
+- accounts template
